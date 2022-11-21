@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  backend:
+    image: raihankheraj/demo4640:latest
+    depends_on:
+      - database
+    env_file:
+      - variables.env
+  database:
+    image: mysql
+    env_file:
+      - variables.env
+  web:
+    build: frontend
+    depends_on:
+      - backend
+    env_file:
+      - variables.env
+    ports:
+      - 5000:80
