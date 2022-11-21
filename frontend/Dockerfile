@@ -10,4 +10,4 @@ EXPOSE 5000
 
 RUN mkdir /etc/nginx/templates
 COPY default.conf.template /etc/nginx/templates
-COPY index.html /usr/share/nginx/html/
+COPY ./index.html /usr/share/nginx/html/
